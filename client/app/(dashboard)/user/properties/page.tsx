@@ -3,24 +3,24 @@ import { Button } from "@/components/ui/button";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import React, { useRef } from "react";
 
-interface propertyCardProps {
-  propertiess: Property[];
-}
+// interface propertyCardProps {
+//   propertiess: Property[];
+// }
 
-interface Property {
-  _id: string;
-  title: string;
-  description: string;
-  price: number;
-  location: string;
-  images: [string];
-  image: string;
-  type: string;
-  rooms: number;
-  bathrooms: number;
-  garages: number;
-  area: number;
-}
+// interface Property {
+//   _id: string;
+//   title: string;
+//   description: string;
+//   price: number;
+//   location: string;
+//   images: [string];
+//   image: string;
+//   type: string;
+//   rooms: number;
+//   bathrooms: number;
+//   garages: number;
+//   area: number;
+// }
 
 import {
   Card,
@@ -42,7 +42,7 @@ import ProptectedRoutes from "@/components/auth/protectedRoutes";
 import { useAuth } from "@/context/AuthContext";
 import Loader from "@/components/Loader";
 
-const page = ({ propertiess }: propertyCardProps) => {
+const page = () => {
   const { user } = useAuth();
 
   let { properties, isLoading, error } = useProperties();
