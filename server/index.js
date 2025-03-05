@@ -105,10 +105,10 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/properties", propertiesRouter);
-app.use("/api/locations/", locationRouter);
-app.use("/api/types/", propertyTypeRouter);
-app.use("/api/users/", userRouter);
-app.use("/api/auth/", authRouter);
+app.use("/api/locations", locationRouter);
+app.use("/api/types", propertyTypeRouter);
+app.use("/api/users", userRouter);
+app.use("/api/auth", authRouter);
 
 app.listen(process.env.PORT || 4000, () => {
   console.log("Server is running...");
