@@ -1,24 +1,24 @@
 "use client";
 
-interface PropertyCardProps {
-  props: Property[];
-}
+// interface PropertyCardProps {
+//   props: Property[];
+// }
 
-interface Property {
-  _id: string;
-  title: string;
-  description: string;
-  price: number;
-  location: string;
-  images: string[];
-  image: string;
-  type: string;
-  rooms: number;
-  bathrooms: number;
-  garages: number;
-  area: number;
-  phone: string;
-}
+// interface Property {
+//   _id: string;
+//   title: string;
+//   description: string;
+//   price: number;
+//   location: string;
+//   images: string[];
+//   image: string;
+//   type: string;
+//   rooms: number;
+//   bathrooms: number;
+//   garages: number;
+//   area: number;
+//   phone: string;
+// }
 
 import {
   Card,
@@ -39,7 +39,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/Loader";
 
-const PropertiesPage = ({ props }: PropertyCardProps) => {
+const PropertiesPage = () => {
   const {
     data: employeeProperties,
     isLoading,
