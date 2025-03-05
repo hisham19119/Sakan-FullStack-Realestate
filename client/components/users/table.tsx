@@ -107,7 +107,7 @@ export function DataTableDemo() {
   // React.useEffect(() => {
   //   const fetchData = async () => {
   //     try {
-  //       const response = await fetch("https://sakan-server.vercel.app/api/users");
+  //       const response = await fetch("http://localhost:4000/api/users");
   //       const result = await response.json();
   //       console.log("result>", result);
   //       setData(result?.data?.users || []);

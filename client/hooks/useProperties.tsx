@@ -46,7 +46,7 @@ export const useProperty = (id: string) => {
 };
 
 export const useEmployeeProperties = () => {
-  const { user } = useAuth(); // Get the user from Auth context
+  const { user } = useAuth();
 
   return useQuery({
     queryKey: ["employeeProperties", user?.id],
@@ -56,6 +56,6 @@ export const useEmployeeProperties = () => {
       }
       return getAEmployeeProperties(user.id);
     },
-    enabled: !!user?.id, // Only run the query if user ID is available
+    enabled: !!user?.id,
   });
 };

@@ -27,15 +27,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string) => {
-    const response = await fetch(
-      "https://sakan-server.vercel.app/api/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+      credentials: "include",
+    });
 
     if (!response.ok) {
       throw new Error("Failed to login");
@@ -50,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const logout = async () => {
-    await fetch("https://sakan-server.vercel.app/api/auth/logout", {
+    await fetch("http://localhost:4000/api/auth/logout", {
       method: "POST",
       credentials: "include",
     });
@@ -65,15 +62,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     name: string,
     role: string
   ) => {
-    const response = await fetch(
-      "https://sakan-server.vercel.app/api/auth/register",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, name, role }),
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password, name, role }),
+      credentials: "include",
+    });
 
     if (!response.ok) {
       throw new Error("Failed to register user");
@@ -93,15 +87,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       if (token && userData) {
         setUser(JSON.parse(userData));
       } else {
-        const response = await fetch(
-          "https://sakan-server.vercel.app/api/auth/me",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            credentials: "include",
-          }
-        );
+        const response = await fetch("http://localhost:4000/api/auth/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        });
 
         if (response.ok) {
           const data = await response.json();

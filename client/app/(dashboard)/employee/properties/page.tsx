@@ -38,7 +38,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/Loader";
 
-const PropertiesPagee = ({ propertiess }: PropertyCardProps) => {
+const PropertiesPage = ({ propertiess }: PropertyCardProps) => {
   const {
     data: employeeProperties,
     isLoading,
@@ -140,4 +140,4 @@ const PropertiesPagee = ({ propertiess }: PropertyCardProps) => {
   );
 };
 
-export default PropertiesPagee;
+export default PropertiesPage;
