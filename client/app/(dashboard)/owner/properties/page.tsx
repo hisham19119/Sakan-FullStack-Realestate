@@ -1,6 +1,6 @@
 "use client";
 
-interface propertyCardProps {
+interface PropertyCardProps {
   propertiess: Property[];
 }
 
@@ -38,7 +38,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/Loader";
 
-const propertiesPage = ({ propertiess }: propertyCardProps) => {
+const PropertiesPage = ({ propertiess }: PropertyCardProps) => {
   let { properties, isLoading, error } = useProperties();
 
   if (isLoading) return <Loader />;
@@ -136,4 +136,4 @@ const propertiesPage = ({ propertiess }: propertyCardProps) => {
   );
 };
 
-export default propertiesPage;
+export default PropertiesPage;

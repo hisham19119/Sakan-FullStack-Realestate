@@ -1,6 +1,6 @@
 "use client";
 
-interface propertyCardProps {
+interface PropertyCardProps {
   propertiess: Property[];
 }
 
@@ -30,7 +30,7 @@ import {
 import { BookOpen, Phone } from "lucide-react";
 import { useEmployeeProperties, useProperties } from "@/hooks/useProperties";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import ShowerOutlinedIcon from "@mui/icons-material/ShowerOutlined";
 import GarageOutlinedIcon from "@mui/icons-material/GarageOutlined";
@@ -38,7 +38,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/Loader";
 
-const propertiesPage = ({ propertiess }: propertyCardProps) => {
+const PropertiesPagee = ({ propertiess }: PropertyCardProps) => {
   const {
     data: employeeProperties,
     isLoading,
@@ -49,7 +49,7 @@ const propertiesPage = ({ propertiess }: propertyCardProps) => {
   if (error) return <p>Error loading properties: </p>;
 
   const properties = employeeProperties?.data?.properties;
-  console.log("properties2222 >>>>>", properties);
+  console.log("properties2", properties);
 
   const handleRedirect = (propertyId: string) => {
     window.location.href = `/owner/properties/${propertyId}`;
@@ -140,4 +140,4 @@ const propertiesPage = ({ propertiess }: propertyCardProps) => {
   );
 };
 
-export default propertiesPage;
+export default PropertiesPagee;
