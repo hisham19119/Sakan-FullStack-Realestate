@@ -10,7 +10,7 @@ interface Property {
   description: string;
   price: number;
   location: string;
-  images: [string];
+  images: string[];
   image: string;
   type: string;
   rooms: number;
