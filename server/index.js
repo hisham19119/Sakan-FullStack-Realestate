@@ -83,7 +83,8 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: "https://sakan-realestate-server.vercel.app",
+    // origin: "https://sakan-realestate-server.vercel.app",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     // allowedHeaders: ["Content-Type"],
     credentials: true,
