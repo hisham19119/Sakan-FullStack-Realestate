@@ -1,15 +1,20 @@
 export const getAllUsers = async () => {
-  const response = await fetch("http://localhost:4000/api/users/?limit=1000", {
-    method: "GET",
-    credentials: "include",
-  });
+  const response = await fetch(
+    "https://sakan-server.vercel.app/api/users/?limit=1000",
+    {
+      method: "GET",
+      credentials: "include",
+    }
+  );
   console.log("responseresponseresponse", response);
   if (!response.ok) throw new Error("users are not available now");
   return response.json();
 };
 
 export const getOneUser = async (id: string) => {
-  const response = await fetch(`http://localhost:4000/api/users/${id}`);
+  const response = await fetch(
+    `https://sakan-server.vercel.app/api/users/${id}`
+  );
   if (!response.ok) throw new Error("this user is not available");
   return response.json();
 };
@@ -20,7 +25,7 @@ export const createUser = async (userData: {
   password: string;
   role: string;
 }) => {
-  const response = await fetch("http://localhost:4000/api/users/", {
+  const response = await fetch("https://sakan-server.vercel.app/api/users/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,14 +46,17 @@ export const updateUser = async (
     role?: string;
   }
 ) => {
-  const response = await fetch(`http://localhost:4000/api/users/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(updatedData),
-    credentials: "include",
-  });
+  const response = await fetch(
+    `https://sakan-server.vercel.app/api/users/${id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+      credentials: "include",
+    }
+  );
 
   if (!response.ok) throw new Error("Failed to update user");
 
@@ -56,10 +64,13 @@ export const updateUser = async (
 };
 
 export const deleteUser = async (id: string) => {
-  const response = await fetch(`http://localhost:4000/api/users/${id}`, {
-    method: "DELETE",
-    credentials: "include",
-  });
+  const response = await fetch(
+    `https://sakan-server.vercel.app/api/users/${id}`,
+    {
+      method: "DELETE",
+      credentials: "include",
+    }
+  );
 
   if (!response.ok) throw new Error("Failed to delete user");
   return response.json();
