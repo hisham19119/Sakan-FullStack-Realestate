@@ -63,7 +63,7 @@ dbConecction();
 // app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://sakan-realestate-server.vercel.app", // أضف هذا العنوان
+  "https://sakan-realestate.vercel.app/",
 ];
 
 // app.use(
@@ -83,8 +83,8 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    // origin: "https://sakan-realestate-server.vercel.app",
-    origin: "http://localhost:3000",
+    origin: "https://sakan-realestate.vercel.app/",
+    // origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     // allowedHeaders: ["Content-Type"],
     credentials: true,
@@ -105,11 +105,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/properties", propertiesRouter);
-app.use("/api/locations", locationRouter);
-app.use("/api/types", propertyTypeRouter);
-app.use("/api/users", userRouter);
-app.use("/api/auth", authRouter);
+app.use("/api/properties/", propertiesRouter);
+app.use("/api/locations/", locationRouter);
+app.use("/api/types/", propertyTypeRouter);
+app.use("/api/users/", userRouter);
+app.use("/api/auth/", authRouter);
 
 app.listen(process.env.PORT || 4000, () => {
   console.log("Server is running...");
