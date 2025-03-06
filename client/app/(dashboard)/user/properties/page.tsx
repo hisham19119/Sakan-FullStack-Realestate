@@ -69,7 +69,7 @@ const page = () => {
         <div className=" flex flex-col gap-4 justify-start items-center p-16 sm:p-28 w-full  ">
           <h1 className=" font-expo-logo sm:font-expo-bold  text-white  flex items-center justify-center text-center   ">
             مرحبًا بك في موقعنا{" "}
-            {user?.name ? `يا ${user.name.split(" ")[0]}` : ""}!
+            {user?.name ? `يا ${user?.name?.split(" ")[0]}` : ""}!
           </h1>
           <p className="font-expo-logo text-white  flex items-center justify-center text-center ">
             نحن هنا لمساعدتك في العثور على العقار المثالي الذي يناسب احتياجاتك.
