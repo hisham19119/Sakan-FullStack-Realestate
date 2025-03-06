@@ -29,7 +29,10 @@ router
 
 router
   .route("/:id")
-  .get(verifyToken, AllowedTo(userRoles.ADMIN), userController.getOne)
+  .get(
+    // verifyToken, AllowedTo(userRoles.ADMIN),
+    userController.getOne
+  )
   .patch(
     // verifyToken,
     // AllowedTo(userRoles.ADMIN),
