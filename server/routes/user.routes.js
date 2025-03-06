@@ -19,12 +19,12 @@ router.get(
 );
 router
   .route("/")
-  .post
+  .post()
   // AllowedTo(userRoles.ADMIN),
   // userValidators.createUserValidator,
   // userController.createOne
   // authController.register
-  ()
+
   .get(verifyToken, AllowedTo(userRoles.ADMIN), userController.getAll);
 
 router
