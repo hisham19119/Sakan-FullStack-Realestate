@@ -21,7 +21,12 @@ const register = async (req, res) => {
 
   // Generate a token for the new user
   const token = jwt.sign(
-    { id: newUser._id, email: newUser.email, role: newUser.role },
+    {
+      id: newUser._id,
+      email: newUser.email,
+      role: newUser.role,
+      name: newUser.name,
+    },
     process.env.JWT_SECRET_KEY,
     { expiresIn: "7d" }
   );
@@ -41,6 +46,7 @@ const register = async (req, res) => {
         id: newUser._id,
         email: newUser.email,
         role: newUser.role,
+        name: newUser.name,
       },
       token, // Optionally include the token in response
     },
@@ -64,7 +70,7 @@ const login = async (req, res) => {
 
   // Generate a unique token for the user
   const token = jwt.sign(
-    { id: user._id, email: user.email, role: user.role },
+    { id: user._id, email: user.email, role: user.role, name: user.name },
     process.env.JWT_SECRET_KEY,
     { expiresIn: "7d" }
   );
