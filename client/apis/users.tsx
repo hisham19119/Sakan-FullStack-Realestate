@@ -1,7 +1,7 @@
 export const getAllUsers = async () => {
   const response = await fetch("https://sakan-server.vercel.app/api/users/", {
     method: "GET",
-    credentials: "include",
+    // credentials: "include",
   });
   console.log("responseresponseresponse", response);
   if (!response.ok) throw new Error("users are not available now");
